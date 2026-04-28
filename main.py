@@ -23,7 +23,7 @@ def compute_r2d2_population(steps: int) -> tuple[int,int,int]:
         alte = erwachsene_alt // 3
         steps = steps - 1
     
-    return (junge,erwachsene,alte)
+    return (junge_alt,erwachsene_alt,alte_alt)
 
 
 
