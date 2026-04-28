@@ -4,12 +4,26 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 #---------------------Aufgabe 1 ------------------------------------
 def compute_r2d2_population(steps: int) -> tuple[int,int,int]:
-    """
-        Computes the r2d2 population for the given step amount
-    :param steps: amount of steps to compute the population (e.g.: 5)
-    :return: tuple of childs adults and old r2d2
-    """
-    return (0,0,0)
+
+    junge = 10
+    erwachsene = 10
+    alte = 10
+
+    while(steps >= 0):
+        print(f"""
+            # junge: {junge}
+            # erwachsene: {erwachsene}
+            # alte: {alte}""")
+        junge_alt = junge
+        erwachsene_alt = erwachsene
+        alte_alt = alte
+
+        junge = erwachsene_alt * 4 + alte_alt * 2
+        erwachsene = junge_alt // 2
+        alte = erwachsene_alt // 3
+        steps = steps - 1
+    
+    return (junge,erwachsene,alte)
 
 
 
