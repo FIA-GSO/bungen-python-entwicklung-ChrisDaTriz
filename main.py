@@ -5,6 +5,8 @@
 #---------------------Aufgabe 1 ------------------------------------
 def compute_r2d2_population(steps: int) -> tuple[int,int,int]:
 
+    steps = steps - 1
+    
     junge = 10
     erwachsene = 10
     alte = 10
