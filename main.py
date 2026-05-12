@@ -3,9 +3,39 @@
 
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 #---------------------Aufgabe 1 ------------------------------------
+
+#def compute_r2d2_population(steps: int) -> tuple[int,int,int]:
+#
+#    steps = steps - 1
+#    
+#    junge = 10
+#    erwachsene = 10
+#    alte = 10
+#
+#    while(steps >= 0):
+#        print(f"""
+#            # junge: {junge}
+#            # erwachsene: {erwachsene}
+#            # alte: {alte}""")
+#        junge_alt = junge
+#        erwachsene_alt = erwachsene
+#        alte_alt = alte
+#
+#        junge = erwachsene_alt * 4 + alte_alt * 2
+#        erwachsene = junge_alt // 2
+#        alte = erwachsene_alt // 3
+#        steps = steps - 1
+#    
+#    return (junge_alt,erwachsene_alt,alte_alt)
+
+
+
+
 def compute_r2d2_population(steps: int) -> tuple[int,int,int]:
 
     steps = steps - 1
+
+    population = []
     
     junge = 10
     erwachsene = 10
@@ -16,14 +46,24 @@ def compute_r2d2_population(steps: int) -> tuple[int,int,int]:
             # junge: {junge}
             # erwachsene: {erwachsene}
             # alte: {alte}""")
+        
+        
         junge_alt = junge
         erwachsene_alt = erwachsene
         alte_alt = alte
+
+        population.append({"junge": junge, "erwachsene": erwachsene, "alte": alte})
 
         junge = erwachsene_alt * 4 + alte_alt * 2
         erwachsene = junge_alt // 2
         alte = erwachsene_alt // 3
         steps = steps - 1
+
+    print("junge\t\terwachsene\talte")
+    for n in population:
+        for key in n.keys():
+            print(str(n[key]) + "\t\t", end="")
+        print()
     
     return (junge_alt,erwachsene_alt,alte_alt)
 
