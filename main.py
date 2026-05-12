@@ -59,11 +59,11 @@ def compute_r2d2_population(steps: int) -> tuple[int,int,int]:
         alte = erwachsene_alt // 3
         steps = steps - 1
 
-    print("junge\t\terwachsene\talte")
+    print("\n|junge\t\t|erwachsene\t|alte\t\t|")
     for n in population:
         for key in n.keys():
-            print(str(n[key]) + "\t\t", end="")
-        print()
+            print("|" + str(n[key]) + "\t\t", end="")
+        print("|")
     
     return (junge_alt,erwachsene_alt,alte_alt)
 
@@ -100,11 +100,12 @@ if __name__ == '__main__':
     print("You need to adjust this code to run your implementation")
 
     # Aufgabe 1
+    r2d2_population = compute_r2d2_population(5)
     print(f"""
         # R2D2 Population after 5 steps is: 
-        # Young: {compute_r2d2_population(5)[0]}
-        # Adults: {compute_r2d2_population(5)[1]}
-        # Old: {compute_r2d2_population(5)[2]}""")
+        # Young: {r2d2_population[0]}
+        # Adults: {r2d2_population[1]}
+        # Old: {r2d2_population[2]}""")
     # print (compute_r2d2_population(5))
 
     # Aufgabe 2
